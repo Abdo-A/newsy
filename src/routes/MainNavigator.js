@@ -10,7 +10,7 @@ export default createStackNavigator(
     Intro: IntroScreen
   },
   {
-    initialRouteName: "Tab",
+    initialRouteName: "Intro",
 
     //--navigationOptions for each screen:
     navigationOptions: ({ navigation }) => {

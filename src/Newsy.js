@@ -1,23 +1,27 @@
 import { Text } from "react-native";
+import Expo from "expo";
 import React, { Component } from "react";
 
+import { loadFonts } from "../assets/style/fonts/loadFonts";
 import MainNavigator from "./routes/MainNavigator";
 
 export default class Newsy extends Component {
   state = {
-    isReady: false
+    fontLoaded: false
   };
 
-  async componentWillMount() {
-    await Expo.Font.loadAsync({
-      Roboto: require("native-base/Fonts/Roboto.ttf"),
-      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf")
-    });
-    this.setState({ isReady: true });
+  componentDidMount() {
+    this.loadAssetsAsync();
+  }
+
+  async loadAssetsAsync() {
+    await Promise.all(loadFonts);
+
+    this.setState(() => ({ fontLoaded: true }));
   }
 
   render() {
-    if (!this.state.isReady) {
+    if (!this.state.fontLoaded) {
       return <Expo.AppLoading />;
     }
 
