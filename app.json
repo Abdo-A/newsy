@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "instagram-clone",
+    "name": "Newsy",
     "description": "This project is really great.",
-    "slug": "instagram-clone",
+    "slug": "newsy",
     "privacy": "public",
     "sdkVersion": "30.0.0",
     "platforms": ["ios", "android"],
@@ -17,9 +17,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     }
