@@ -1,8 +1,15 @@
+import { View } from "react-native";
 import React, { Component } from "react";
-import { Text } from "react-native";
+
+import NewsList from "../../components/NewsList/NewsList";
+import styles from "./InternationalNewsScreenStyle";
 
 export default class InternationalNewsScreen extends Component {
   render() {
-    return <Text>InternationalNewsScreen</Text>;
+    return (
+      <View style={styles.container}>
+        <NewsList />
+      </View>
+    );
   }
 }

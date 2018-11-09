@@ -6,7 +6,7 @@ import React from "react";
 
 import { colors } from "../../assets/style/base";
 import InternationalNewsScreen from "../Screens/InternationalNewsScreen/InternationalNewsScreen";
-import LocalNewsScreen from "../Screens/LocalNewsScreen/LocalNewsScreenStyle";
+import LocalNewsScreen from "../Screens/LocalNewsScreen/LocalNewsScreen";
 import styles from "../Screens/IntroScreen/IntroScreenStyle";
 
 export default createBottomTabNavigator(

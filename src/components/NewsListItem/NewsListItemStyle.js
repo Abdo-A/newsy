@@ -1,11 +1,9 @@
 import { StyleSheet } from "react-native";
+import { gaps, dimensions } from "../../../assets/style/base";
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 5
+    width: dimensions.fullWidth - gaps.xl
   }
 });
 

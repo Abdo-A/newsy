@@ -1,12 +1,14 @@
-import { StyleSheet } from "react-native";
+import { Text, View } from "react-native";
+import React, { Component } from "react";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 5
+import styles from "./LocalNewsScreenStyle";
+
+export default class LocalNewsScreen extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>LocalNewsScreen</Text>
+      </View>
+    );
   }
-});
-
-export default styles;
+}
