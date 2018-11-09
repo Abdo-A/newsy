@@ -1,10 +1,13 @@
 import { createBottomTabNavigator } from "react-navigation";
-import IonIcon from "react-native-vector-icons/Ionicons";
+import { Text } from "react-native";
+import EntypoIcon from "react-native-vector-icons/Entypo";
+import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import React from "react";
 
 import { colors } from "../../assets/style/base";
 import InternationalNewsScreen from "../Screens/InternationalNewsScreen/InternationalNewsScreen";
 import LocalNewsScreen from "../Screens/LocalNewsScreen/LocalNewsScreenStyle";
+import styles from "../Screens/IntroScreen/IntroScreenStyle";
 
 export default createBottomTabNavigator(
   {
@@ -12,18 +15,38 @@ export default createBottomTabNavigator(
       screen: InternationalNewsScreen,
       //--specific navigationOptions for each tab
       navigationOptions: {
-        tabBarLabel: "International News",
+        tabBarLabel: ({ tintColor }) => (
+          <Text
+            style={{
+              fontWeight: "bold",
+              textAlign: "center",
+              color: tintColor
+            }}
+          >
+            International
+          </Text>
+        ),
         tabBarIcon: ({ tintColor }) => (
-          <IonIcon name="ios-home" size={24} color={tintColor} />
+          <MaterialCommunityIcon name="earth" size={30} color={tintColor} />
         )
       }
     },
     LocalNews: {
       screen: LocalNewsScreen,
       navigationOptions: {
-        tabBarLabel: "Local News",
+        tabBarLabel: ({ tintColor }) => (
+          <Text
+            style={{
+              fontWeight: "bold",
+              textAlign: "center",
+              color: tintColor
+            }}
+          >
+            Local
+          </Text>
+        ),
         tabBarIcon: ({ tintColor }) => (
-          <IonIcon name="ios-settings" size={24} color={tintColor} />
+          <EntypoIcon name="magnifying-glass" size={30} color={tintColor} />
         )
       }
     }
@@ -34,8 +57,8 @@ export default createBottomTabNavigator(
     order: ["InternationalNews", "LocalNews"],
 
     tabBarOptions: {
-      activeTintColor: colors.primary,
-      inactiveTintColor: colors.black
+      activeTintColor: colors.primary.toString(),
+      inactiveTintColor: colors.black.toString()
     }
   }
 );

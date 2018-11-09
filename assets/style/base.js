@@ -25,13 +25,13 @@ export const gaps = {
   filler: 100
 };
 
+//COLORS
 const primaryColor = Color("#c94b28");
 const secondaryColor = Color("#4DAD4A");
 const tertiaryColor = Color("#4444AA");
 const black = Color("#222222");
 const white = Color("#F4f4f4");
 
-//COLORS
 export const colors = {
   primary: primaryColor,
   primaryLight: primaryColor.lighten(0.2),

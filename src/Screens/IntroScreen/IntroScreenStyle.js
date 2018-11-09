@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+
 import {
   colors,
   dimensions,
@@ -10,8 +11,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: colors.primary
+    alignItems: "center"
   },
   enterButton: {
     alignSelf: "center",
@@ -23,7 +23,12 @@ const styles = StyleSheet.create({
     fontFamily: fontTypes.spicy,
     color: colors.white,
     fontSize: 70,
-    marginBottom: gaps.filler - 20
+    marginBottom: gaps.xxl
+  },
+  paperIcon: {
+    color: colors.white,
+    fontSize: 40,
+    marginBottom: gaps.md
   }
 });
 

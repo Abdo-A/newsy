@@ -1,6 +1,8 @@
 import { createStackNavigator, Header } from "react-navigation";
+import { Text } from "react-native";
+import React from "react";
 
-import { colors } from "../../assets/style/base";
+import { colors, fontTypes, gaps } from "../../assets/style/base";
 import BottomTabNavigator from "./BottomTabNavigator";
 import IntroScreen from "../Screens/IntroScreen/IntroScreen";
 
@@ -19,12 +21,10 @@ export default createStackNavigator(
 
       //values we will modify then return:
       let tabBarVisible = true;
-      let headerStyle = {};
+      let headerStyle = { backgroundColor: colors.primary };
       let headerTitle = "";
       let headerRight = "";
-      headerTitleStyle = {
-        color: colors.white
-      };
+      headerTitleStyle = {};
 
       //For each screen:
       if (screen === "Tab") {
@@ -35,23 +35,40 @@ export default createStackNavigator(
 
         //InternationalNews tab screen
         if (tabScreen === "InternationalNews") {
-          headerTitle = "InternationalNews";
-          headerStyle = {
-            backgroundColor: colors.primary
-          };
+          headerTitle = (
+            <Text
+              style={{
+                fontFamily: fontTypes.spicy,
+                marginLeft: gaps.md,
+                fontSize: 30,
+                color: colors.white,
+                textAlign: "center"
+              }}
+            >
+              International News
+            </Text>
+          );
         }
 
         //LocalNews tab screen
         if (tabScreen === "LocalNews") {
-          headerTitle = "LocalNews";
-          headerStyle = {
-            backgroundColor: colors.primary
-          };
+          headerTitle = (
+            <Text
+              style={{
+                fontFamily: fontTypes.spicy,
+                marginLeft: gaps.md,
+                fontSize: 30,
+                color: colors.white,
+                textAlign: "center"
+              }}
+            >
+              Local News
+            </Text>
+          );
         }
       }
 
       if (screen === "Intro") {
-        headerTitle = "Intro";
         headerStyle = {
           display: "none"
         };
@@ -63,7 +80,6 @@ export default createStackNavigator(
         headerTitle,
         headerRight,
         headerTitleStyle
-
         // and so on..
       };
     }
