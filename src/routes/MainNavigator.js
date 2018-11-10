@@ -115,12 +115,7 @@ export default createStackNavigator(
                 textAlign: "center"
               }}
             >
-              Search By Yourself{" "}
-              <MaterialCommunityIcon
-                name="emoticon-poop"
-                size={30}
-                color={colors.secondary.toString()}
-              />
+              Search By Yourself 💩
             </Text>
           </View>
         );

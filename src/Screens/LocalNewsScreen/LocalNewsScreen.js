@@ -37,7 +37,7 @@ export default class LocalNewsScreen extends Component {
       }));
     }
 
-    //Get Local News
+    //Get Local News Url and then pass it into the news list
     this.setState(() => ({
       localNewsUrl: localNewsUrl(country_code),
       loading: false

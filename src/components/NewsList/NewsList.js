@@ -13,6 +13,7 @@ export default class NewsList extends Component {
   };
 
   async componentDidMount() {
+    console.log(this.props.api);
     await this.getNewsFromApi();
   }
 
@@ -23,10 +24,14 @@ export default class NewsList extends Component {
 
     //Get articless
     const newsListResult = await getDataFromApi(this.props.api);
-    //console.log(newsListResult);
+
+    if (newsListResult.articles.length <= 0) {
+      if (this.props.onNoResultedNews) {
+        this.props.onNoResultedNews();
+      }
+    }
 
     //Filter articles:
-
     const filteredArticles = newsListResult.articles.filter(article => {
       let counter = 0;
       for (let newsArticle of newsListResult.articles) {
@@ -64,7 +69,7 @@ export default class NewsList extends Component {
 
     return (
       <View style={styles.container}>
-        <ScrollView>
+        <ScrollView contentContainerStyle={this.props.scrollerStyle}>
           <View style={styles.scrollView}>
             {this.state.newsList.map(item => (
               <NewsListItem news={item} key={item.url} />
