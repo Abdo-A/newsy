@@ -12,7 +12,7 @@ export default class NewsListItem extends Component {
         </CardItem>
         <CardItem>
           <Body>
-            <Text>//Your text here</Text>
+            <Text>{this.props.news.content}</Text>
           </Body>
         </CardItem>
         <CardItem footer>

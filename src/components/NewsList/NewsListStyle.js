@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { dimensions } from "../../../assets/style/base";
 
 const styles = StyleSheet.create({
   container: {
@@ -7,6 +8,9 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     alignSelf: "center"
+  },
+  activityIndicatorWrapper: {
+    marginTop: dimensions.fullHeight / 3
   }
 });
 
