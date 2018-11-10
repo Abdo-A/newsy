@@ -41,7 +41,8 @@ export default class NewsList extends Component {
       return (
         article.urlToImage &&
         article.title &&
-        article.source.id !== "the-jerusalem-post"
+        article.source.id !== "the-jerusalem-post" &&
+        article.source.id !== "buzzfeed"
       );
     });
 
