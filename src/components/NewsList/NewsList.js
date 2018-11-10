@@ -23,11 +23,27 @@ export default class NewsList extends Component {
 
     //Get articless
     const newsListResult = await getDataFromApi(this.props.api);
+    //console.log(newsListResult);
 
     //Filter articles:
-    const filteredArticles = newsListResult.articles.filter(
-      article => article.urlToImage && article.title
-    );
+
+    const filteredArticles = newsListResult.articles.filter(article => {
+      let counter = 0;
+      for (let newsArticle of newsListResult.articles) {
+        if (newsArticle.url === article.url) {
+          ++counter;
+        }
+      }
+      if (counter > 1) {
+        return false;
+      }
+
+      return (
+        article.urlToImage &&
+        article.title &&
+        article.source.id !== "the-jerusalem-post"
+      );
+    });
 
     //Set state
     this.setState(() => ({

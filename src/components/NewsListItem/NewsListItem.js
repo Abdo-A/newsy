@@ -1,11 +1,27 @@
 import { Card, CardItem, Text, Body } from "native-base";
-import { Image, TouchableOpacity, Linking } from "react-native";
+import {
+  Image,
+  TouchableOpacity,
+  Linking,
+  ActivityIndicator
+} from "react-native";
 import moment from "moment";
 import React, { Component } from "react";
 
 import styles from "./NewsListItemStyle";
+import { colors } from "../../../assets/style/base";
 
 export default class NewsListItem extends Component {
+  state = {
+    imageLoading: false
+  };
+
+  componentDidMount() {
+    this.setState(() => ({
+      imageLoading: true
+    }));
+  }
+
   goToLink = link => {
     Linking.openURL(link);
   };
@@ -30,6 +46,12 @@ export default class NewsListItem extends Component {
         .calendar();
     }
 
+    onImageLoaded = () => {
+      this.setState(() => ({
+        imageLoading: false
+      }));
+    };
+
     return (
       <Card style={styles.container}>
         <TouchableOpacity
@@ -39,18 +61,29 @@ export default class NewsListItem extends Component {
           <CardItem header>
             <Text style={styles.titleText}>{title}</Text>
           </CardItem>
-          <CardItem>
+          <CardItem style={styles.imageBody}>
             <Body>
-              <Image source={{ uri: urlToImage }} style={styles.mainImage} />
+              <Image
+                source={{ uri: urlToImage }}
+                style={styles.mainImage}
+                onLoad={this.onImageLoaded}
+              />
+              {this.state.imageLoading || (
+                <ActivityIndicator
+                  size="large"
+                  color={colors.secondary}
+                  style={styles.imageLoadingIndicator}
+                />
+              )}
             </Body>
           </CardItem>
           <CardItem>
             <Body>
-              <Text>{polishedContent}</Text>
+              <Text style={styles.contentText}>{polishedContent}</Text>
             </Body>
           </CardItem>
           <CardItem footer>
-            <Text>{polishedDate}</Text>
+            <Text style={styles.dateText}>{polishedDate}</Text>
           </CardItem>
         </TouchableOpacity>
       </Card>

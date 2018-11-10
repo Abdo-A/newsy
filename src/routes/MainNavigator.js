@@ -119,7 +119,7 @@ export default createStackNavigator(
               <MaterialCommunityIcon
                 name="emoticon-poop"
                 size={30}
-                color={colors.white.toString()}
+                color={colors.secondary.toString()}
               />
             </Text>
           </View>
