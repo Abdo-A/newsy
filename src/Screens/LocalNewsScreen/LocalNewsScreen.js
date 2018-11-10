@@ -26,7 +26,7 @@ export default class LocalNewsScreen extends Component {
     const ip = ipData.ip;
 
     //Get User Location
-    const locationData = await getDataFromApi(locationUrl("81.0.3.255"));
+    const locationData = await getDataFromApi(locationUrl(ip));
     let country_code = locationData.country_code;
 
     //Check if this location is supported

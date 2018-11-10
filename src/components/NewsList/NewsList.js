@@ -38,22 +38,22 @@ export default class NewsList extends Component {
       <View style={styles.container}>
         <ScrollView>
           <View style={styles.scrollView}>
-            <NewsListItem news={this.state.newsList[4]} />
-            <NewsListItem news={this.state.newsList[4]} />
-            <NewsListItem news={this.state.newsList[4]} />
-            <NewsListItem news={this.state.newsList[4]} />
-            <NewsListItem news={this.state.newsList[4]} />
-            <NewsListItem news={this.state.newsList[4]} />
-            <NewsListItem news={this.state.newsList[4]} />
-            <NewsListItem news={this.state.newsList[4]} />
-            <NewsListItem news={this.state.newsList[4]} />
-            <NewsListItem news={this.state.newsList[4]} />
-            <NewsListItem news={this.state.newsList[4]} />
-            <NewsListItem news={this.state.newsList[4]} />
-            <NewsListItem news={this.state.newsList[4]} />
-            <NewsListItem news={this.state.newsList[4]} />
-            <NewsListItem news={this.state.newsList[4]} />
-            <NewsListItem news={this.state.newsList[4]} />
+            <NewsListItem news={this.state.newsList[3]} />
+            <NewsListItem news={this.state.newsList[3]} />
+            <NewsListItem news={this.state.newsList[3]} />
+            <NewsListItem news={this.state.newsList[3]} />
+            <NewsListItem news={this.state.newsList[3]} />
+            <NewsListItem news={this.state.newsList[3]} />
+            <NewsListItem news={this.state.newsList[3]} />
+            <NewsListItem news={this.state.newsList[3]} />
+            <NewsListItem news={this.state.newsList[3]} />
+            <NewsListItem news={this.state.newsList[3]} />
+            <NewsListItem news={this.state.newsList[3]} />
+            <NewsListItem news={this.state.newsList[3]} />
+            <NewsListItem news={this.state.newsList[3]} />
+            <NewsListItem news={this.state.newsList[3]} />
+            <NewsListItem news={this.state.newsList[3]} />
+            <NewsListItem news={this.state.newsList[3]} />
           </View>
         </ScrollView>
       </View>
