@@ -1,6 +1,7 @@
 import { ScrollView, View, ActivityIndicator } from "react-native";
 import React, { Component } from "react";
 
+import { colors } from "../../../assets/style/base";
 import { getDataFromApi } from "../../data/helperFunctions/getDataFromAPI";
 import NewsListItem from "../NewsListItem/NewsListItem";
 import styles from "./NewsListStyle";
@@ -28,7 +29,7 @@ export default class NewsList extends Component {
     if (this.state.loading || !this.state.newsList) {
       return (
         <View style={styles.activityIndicatorWrapper}>
-          <ActivityIndicator size="large" />
+          <ActivityIndicator size="large" color={colors.secondary} />
         </View>
       );
     }
@@ -37,22 +38,22 @@ export default class NewsList extends Component {
       <View style={styles.container}>
         <ScrollView>
           <View style={styles.scrollView}>
-            <NewsListItem news={this.state.newsList[0]} />
-            <NewsListItem news={this.state.newsList[0]} />
-            <NewsListItem news={this.state.newsList[0]} />
-            <NewsListItem news={this.state.newsList[0]} />
-            <NewsListItem news={this.state.newsList[0]} />
-            <NewsListItem news={this.state.newsList[0]} />
-            <NewsListItem news={this.state.newsList[0]} />
-            <NewsListItem news={this.state.newsList[0]} />
-            <NewsListItem news={this.state.newsList[0]} />
-            <NewsListItem news={this.state.newsList[0]} />
-            <NewsListItem news={this.state.newsList[0]} />
-            <NewsListItem news={this.state.newsList[0]} />
-            <NewsListItem news={this.state.newsList[0]} />
-            <NewsListItem news={this.state.newsList[0]} />
-            <NewsListItem news={this.state.newsList[0]} />
-            <NewsListItem news={this.state.newsList[0]} />
+            <NewsListItem news={this.state.newsList[4]} />
+            <NewsListItem news={this.state.newsList[4]} />
+            <NewsListItem news={this.state.newsList[4]} />
+            <NewsListItem news={this.state.newsList[4]} />
+            <NewsListItem news={this.state.newsList[4]} />
+            <NewsListItem news={this.state.newsList[4]} />
+            <NewsListItem news={this.state.newsList[4]} />
+            <NewsListItem news={this.state.newsList[4]} />
+            <NewsListItem news={this.state.newsList[4]} />
+            <NewsListItem news={this.state.newsList[4]} />
+            <NewsListItem news={this.state.newsList[4]} />
+            <NewsListItem news={this.state.newsList[4]} />
+            <NewsListItem news={this.state.newsList[4]} />
+            <NewsListItem news={this.state.newsList[4]} />
+            <NewsListItem news={this.state.newsList[4]} />
+            <NewsListItem news={this.state.newsList[4]} />
           </View>
         </ScrollView>
       </View>
