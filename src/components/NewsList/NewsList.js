@@ -13,17 +13,28 @@ export default class NewsList extends Component {
   };
 
   async componentDidMount() {
+    await this.getNewsFromApi();
+  }
+
+  getNewsFromApi = async () => {
     this.setState(() => ({
       loading: true
     }));
 
+    //Get articless
     const newsListResult = await getDataFromApi(this.props.api);
 
+    //Filter articles:
+    const filteredArticles = newsListResult.articles.filter(
+      article => article.urlToImage && article.title
+    );
+
+    //Set state
     this.setState(() => ({
-      newsList: newsListResult.articles,
+      newsList: filteredArticles,
       loading: false
     }));
-  }
+  };
 
   render() {
     if (this.state.loading || !this.state.newsList) {
@@ -38,22 +49,9 @@ export default class NewsList extends Component {
       <View style={styles.container}>
         <ScrollView>
           <View style={styles.scrollView}>
-            <NewsListItem news={this.state.newsList[3]} />
-            <NewsListItem news={this.state.newsList[3]} />
-            <NewsListItem news={this.state.newsList[3]} />
-            <NewsListItem news={this.state.newsList[3]} />
-            <NewsListItem news={this.state.newsList[3]} />
-            <NewsListItem news={this.state.newsList[3]} />
-            <NewsListItem news={this.state.newsList[3]} />
-            <NewsListItem news={this.state.newsList[3]} />
-            <NewsListItem news={this.state.newsList[3]} />
-            <NewsListItem news={this.state.newsList[3]} />
-            <NewsListItem news={this.state.newsList[3]} />
-            <NewsListItem news={this.state.newsList[3]} />
-            <NewsListItem news={this.state.newsList[3]} />
-            <NewsListItem news={this.state.newsList[3]} />
-            <NewsListItem news={this.state.newsList[3]} />
-            <NewsListItem news={this.state.newsList[3]} />
+            {this.state.newsList.map(item => (
+              <NewsListItem news={item} key={item.url} />
+            ))}
           </View>
         </ScrollView>
       </View>

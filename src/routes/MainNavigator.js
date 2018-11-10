@@ -1,15 +1,19 @@
-import { createStackNavigator, Header } from "react-navigation";
-import { Text } from "react-native";
+import { createStackNavigator } from "react-navigation";
+import { Text, TouchableOpacity, View } from "react-native";
+import EntypoIcon from "react-native-vector-icons/Entypo";
+import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import React from "react";
 
 import { colors, fontTypes, gaps } from "../../assets/style/base";
 import BottomTabNavigator from "./BottomTabNavigator";
 import IntroScreen from "../Screens/IntroScreen/IntroScreen";
+import SearchScreen from "../Screens/SearchScreen.js/SearchScreen";
 
 export default createStackNavigator(
   {
     Tab: BottomTabNavigator,
-    Intro: IntroScreen
+    Intro: IntroScreen,
+    Search: SearchScreen
   },
   {
     initialRouteName: "Intro",
@@ -48,6 +52,18 @@ export default createStackNavigator(
               International News
             </Text>
           );
+          headerRight = (
+            <TouchableOpacity
+              onPress={() => navigation.push("Search")}
+              style={{ marginRight: 10 }}
+            >
+              <EntypoIcon
+                name="magnifying-glass"
+                size={30}
+                color={colors.white.toString()}
+              />
+            </TouchableOpacity>
+          );
         }
 
         //LocalNews tab screen
@@ -65,6 +81,19 @@ export default createStackNavigator(
               Local News
             </Text>
           );
+
+          headerRight = (
+            <TouchableOpacity
+              onPress={() => navigation.push("Search")}
+              style={{ marginRight: 10 }}
+            >
+              <EntypoIcon
+                name="magnifying-glass"
+                size={30}
+                color={colors.white.toString()}
+              />
+            </TouchableOpacity>
+          );
         }
       }
 
@@ -72,6 +101,29 @@ export default createStackNavigator(
         headerStyle = {
           display: "none"
         };
+      }
+
+      if (screen === "Search") {
+        headerTitle = (
+          <View>
+            <Text
+              style={{
+                fontFamily: fontTypes.spicy,
+                marginLeft: gaps.md,
+                fontSize: 28,
+                color: colors.white,
+                textAlign: "center"
+              }}
+            >
+              Search By Yourself{" "}
+              <MaterialCommunityIcon
+                name="emoticon-poop"
+                size={30}
+                color={colors.white.toString()}
+              />
+            </Text>
+          </View>
+        );
       }
 
       return {

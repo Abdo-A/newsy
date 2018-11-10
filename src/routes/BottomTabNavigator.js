@@ -1,13 +1,12 @@
 import { createBottomTabNavigator } from "react-navigation";
 import { Text } from "react-native";
-import EntypoIcon from "react-native-vector-icons/Entypo";
+import Ionicon from "react-native-vector-icons/Ionicons";
 import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import React from "react";
 
 import { colors } from "../../assets/style/base";
 import InternationalNewsScreen from "../Screens/InternationalNewsScreen/InternationalNewsScreen";
 import LocalNewsScreen from "../Screens/LocalNewsScreen/LocalNewsScreen";
-import styles from "../Screens/IntroScreen/IntroScreenStyle";
 
 export default createBottomTabNavigator(
   {
@@ -46,7 +45,7 @@ export default createBottomTabNavigator(
           </Text>
         ),
         tabBarIcon: ({ tintColor }) => (
-          <EntypoIcon name="magnifying-glass" size={30} color={tintColor} />
+          <Ionicon name="ios-flag" size={35} color={tintColor} />
         )
       }
     }
