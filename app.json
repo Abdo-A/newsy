@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Newsy",
-    "description": "This project is really great.",
+    "description": "The perfect news application to keep yourself up to date.",
     "slug": "newsy",
     "privacy": "public",
     "sdkVersion": "30.0.0",
@@ -20,6 +20,9 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.abdo.newsy"
     }
   }
 }

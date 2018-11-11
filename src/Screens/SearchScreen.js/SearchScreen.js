@@ -56,6 +56,7 @@ export default class SearchScreen extends Component {
             onChangeText={this.onInputChange}
             style={styles.searchInput}
             autoFocus
+            underlineColorAndroid="transparent"
           />
           <Button
             rounded
