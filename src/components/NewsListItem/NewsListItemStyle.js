@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
   titleText: {
     color: colors.secondary,
-    fontFamily: fontTypes.main
+    fontSize: 22
   },
   imageBody: {
     position: "relative"
