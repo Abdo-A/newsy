@@ -3,7 +3,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "scripts": {
-    "start": "expo start",
+    "start": "exp start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject"
@@ -19,5 +19,8 @@
     "react-native-animatable": "^1.3.0",
     "react-native-extended-stylesheet": "^0.10.0",
     "react-navigation": "^2.18.2"
+  },
+  "devDependencies": {
+    "exp": "^57.2.1"
   }
 }

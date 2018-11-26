@@ -1,5 +1,5 @@
 import { Text, Button } from "native-base";
-import { View, TextInput } from "react-native";
+import { View, TextInput, Keyboard } from "react-native";
 import React, { Component } from "react";
 
 import { keywordNewsUrl } from "../../data/apiLinks";
@@ -27,6 +27,8 @@ export default class SearchScreen extends Component {
       }));
       return;
     } else {
+      Keyboard.dismiss();
+
       this.setState(() => ({
         newsUrl: ""
       }));

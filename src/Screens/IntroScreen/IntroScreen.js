@@ -42,15 +42,15 @@ export default class IntroScreen extends Component {
     this.setState(
       () => ({
         notificationsToken: token
-      }),
-      () =>
-        setTimeout(() => {
-          this.sendPushNotification(
-            this.state.notificationsToken,
-            "notification title",
-            "notification body"
-          );
-        }, 5000)
+      })
+      // () =>
+      //   setTimeout(() => {
+      //     this.sendPushNotification(
+      //       this.state.notificationsToken,
+      //       "notification title",
+      //       "notification body"
+      //     );
+      //   }, 5000)
     );
   };
 

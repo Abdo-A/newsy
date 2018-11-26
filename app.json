@@ -8,9 +8,16 @@
     "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/icons/icon.png",
+    "notification": {
+      "icon": "./assets/icons/icon144x144.png",
+      "color": "#000000"
+    },
+    "loading": {
+      "icon": "./assets/icons/icon500x500.png"
+    },
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/icons/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,7 +26,8 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.abdo.newsy"
     },
     "android": {
       "package": "com.abdo.newsy"
