@@ -1,13 +1,13 @@
-import { createStackNavigator } from "react-navigation";
-import { Text, TouchableOpacity, View } from "react-native";
-import EntypoIcon from "react-native-vector-icons/Entypo";
-import MaterialCommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
-import React from "react";
+import { createStackNavigator } from 'react-navigation';
+import { Text, TouchableOpacity, View } from 'react-native';
+import EntypoIcon from 'react-native-vector-icons/Entypo';
+import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import React from 'react';
 
-import { colors, fontTypes, gaps } from "../../assets/style/base";
-import BottomTabNavigator from "./BottomTabNavigator";
-import IntroScreen from "../Screens/IntroScreen/IntroScreen";
-import SearchScreen from "../Screens/SearchScreen.js/SearchScreen";
+import { colors, fontTypes, gaps } from '../../assets/style/base';
+import BottomTabNavigator from './BottomTabNavigator';
+import IntroScreen from '../Screens/IntroScreen/IntroScreen';
+import SearchScreen from '../Screens/SearchScreen.js/SearchScreen';
 
 export default createStackNavigator(
   {
@@ -16,7 +16,7 @@ export default createStackNavigator(
     Search: SearchScreen
   },
   {
-    initialRouteName: "Intro",
+    initialRouteName: 'Intro',
 
     //--navigationOptions for each screen:
     navigationOptions: ({ navigation }) => {
@@ -26,19 +26,19 @@ export default createStackNavigator(
       //values we will modify then return:
       let tabBarVisible = true;
       let headerStyle = { backgroundColor: colors.primary };
-      let headerTitle = "";
-      let headerRight = "";
+      let headerTitle = '';
+      let headerRight = '';
       headerTitleStyle = {};
 
       //For each screen:
-      if (screen === "Tab") {
+      if (screen === 'Tab') {
         const { routes, index } = navigation.state;
         let tabScreen = routes[index].routeName;
 
         //for each tab screen
 
         //InternationalNews tab screen
-        if (tabScreen === "InternationalNews") {
+        if (tabScreen === 'InternationalNews') {
           headerTitle = (
             <Text
               style={{
@@ -46,7 +46,7 @@ export default createStackNavigator(
                 marginLeft: gaps.md,
                 fontSize: 30,
                 color: colors.white,
-                textAlign: "center"
+                textAlign: 'center'
               }}
             >
               International News
@@ -54,7 +54,7 @@ export default createStackNavigator(
           );
           headerRight = (
             <TouchableOpacity
-              onPress={() => navigation.push("Search")}
+              onPress={() => navigation.push('Search')}
               style={{ marginRight: 10 }}
             >
               <EntypoIcon
@@ -67,7 +67,7 @@ export default createStackNavigator(
         }
 
         //LocalNews tab screen
-        if (tabScreen === "LocalNews") {
+        if (tabScreen === 'LocalNews') {
           headerTitle = (
             <Text
               style={{
@@ -75,7 +75,7 @@ export default createStackNavigator(
                 marginLeft: gaps.md,
                 fontSize: 30,
                 color: colors.white,
-                textAlign: "center"
+                textAlign: 'center'
               }}
             >
               Local News
@@ -84,7 +84,7 @@ export default createStackNavigator(
 
           headerRight = (
             <TouchableOpacity
-              onPress={() => navigation.push("Search")}
+              onPress={() => navigation.push('Search')}
               style={{ marginRight: 10 }}
             >
               <EntypoIcon
@@ -97,13 +97,13 @@ export default createStackNavigator(
         }
       }
 
-      if (screen === "Intro") {
+      if (screen === 'Intro') {
         headerStyle = {
-          display: "none"
+          display: 'none'
         };
       }
 
-      if (screen === "Search") {
+      if (screen === 'Search') {
         headerTitle = (
           <View>
             <Text
@@ -112,7 +112,7 @@ export default createStackNavigator(
                 marginLeft: gaps.md,
                 fontSize: 28,
                 color: colors.white,
-                textAlign: "center"
+                textAlign: 'center'
               }}
             >
               Search By Yourself 💩

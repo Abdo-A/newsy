@@ -1,17 +1,18 @@
-import { Card, CardItem, Text, Body } from "native-base";
+import { Card, CardItem, Text, Body } from 'native-base';
+
 import {
   Image,
   TouchableOpacity,
   Linking,
   ActivityIndicator
-} from "react-native";
-import moment from "moment";
-import React, { Component } from "react";
+} from 'react-native';
+import moment from 'moment';
+import React, { PureComponent } from 'react';
 
-import styles from "./NewsListItemStyle";
-import { colors } from "../../../assets/style/base";
+import styles from './NewsListItemStyle';
+import { colors } from '../../../assets/style/base';
 
-export default class NewsListItem extends Component {
+export default class NewsListItem extends PureComponent {
   state = {
     imageLoading: false
   };
@@ -22,7 +23,7 @@ export default class NewsListItem extends Component {
     }));
   }
 
-  goToLink = link => {
+  goToLink = (link) => {
     Linking.openURL(link);
   };
 
@@ -34,7 +35,7 @@ export default class NewsListItem extends Component {
 
     //polishing content
     if (content) {
-      const edgeIndex = content.indexOf("[+");
+      const edgeIndex = content.indexOf('[+');
       polishedContent = content.slice(0, edgeIndex);
     }
 
